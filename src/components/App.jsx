@@ -7,8 +7,6 @@ import { getContacts, saveContacts } from './LocalStorage/localStorage';
 function App() {
   const [contacts, setContacts] = useState(getContacts());
   const [filter, setFilter] = useState('');
-  const [name, setName] = useState('');
-  const [number, setNumber] = useState('');
 
   useEffect(() => {
     saveContacts(contacts);
