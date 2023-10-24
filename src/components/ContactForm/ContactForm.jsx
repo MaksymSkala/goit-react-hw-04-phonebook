@@ -5,8 +5,16 @@ const ContactForm = ({ onAddContact }) => {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
+  const handleNameChange = (e) => {
+    setName(e.target.value);
+  };
+
+  const handleNumberChange = (e) => {
+    setNumber(e.target.value);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
     if (!name || !number) {
       alert('Please fill in all fields.');
@@ -20,24 +28,18 @@ const ContactForm = ({ onAddContact }) => {
   };
 
   return (
-    <form className='form' onSubmit={handleSubmit}>
-      <label className='form-input'>
+    <form className="form" onSubmit={handleSubmit}>
+      <label className="form-input">
         Name:
-        <input
-          type="text"
-          value={name}
-          onChange={(event) => setName(event.target.value)}
-        />
+        <input type="text" name="name" value={name} onChange={handleNameChange} />
       </label>
-      <label className='form-input'>
+      <label className="form-input">
         Number:
-        <input
-          type="tel"
-          value={number}
-          onChange={(event) => setNumber(event.target.value)}
-        />
+        <input type="tel" name="number" value={number} onChange={handleNumberChange} />
       </label>
-      <button className='form-button' type="submit">Add contact</button>
+      <button className="form-button" type="submit">
+        Add contact
+      </button>
     </form>
   );
 };
