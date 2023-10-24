@@ -1,0 +1,10 @@
+.filter-input {
+    display: flex;
+    flex-direction: column; /* Розміщення елементів згори до низу */
+    align-items: flex-start;
+    margin-bottom: 10px;
+    gap: 5px;
+    margin-top: 5px;
+    border: 1px solid #b6b6b6;
+  }
+  
